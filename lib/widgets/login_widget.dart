@@ -1,7 +1,9 @@
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:savai_taxi/utils/app_constants.dart';
+import 'package:savai_taxi/views/otp_verification_screen.dart';
 import 'package:savai_taxi/widgets/text_widget.dart';
 
 Widget loginWidget(CountryCode countryCode, Function onCountryChange) {
@@ -62,6 +64,9 @@ Widget loginWidget(CountryCode countryCode, Function onCountryChange) {
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: TextField(
+                      onTap: () {
+                        Get.to(() => const OtpVerificationScreen());
+                      },
                       decoration: InputDecoration(
                           hintStyle: GoogleFonts.poppins(
                             fontSize: 12,
